@@ -6,17 +6,24 @@ project(
   LANGUAGES CXX
 )
 
-set(BUILD_SHARED_LIBS ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_CXX_STANDARD 20)
-if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
-  message(
-    FATAL_ERROR
-      "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there."
-  )
-endif()
+set(BUILD_TESTING ON)
+set(BUILD_DOC   ON)
+set(USE_SUPERBUILD ON)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include )
+include( ${PROJECT_SOURCE_DIR}/cmake/build.cmake)
+include( ${PROJECT_SOURCE_DIR}/cmake/compiler.cmake)
+
+include_directories(${PROJECT_SOURCE_DIR}/include )
+
 
 subdirs(src)
 
+
+if(${BUILD_TESTING})
+  include( ${PROJECT_SOURCE_DIR}/cmake/catch2.cmake )
+  subdirs(tests)
+endif(${BUILD_TESTING})
+
+if(${BUILD_DOC})
+  include( ${PROJECT_SOURCE_DIR}/cmake/doxygen.cmake)
+endif(${BUILD_DOC})

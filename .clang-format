@@ -1,6 +1,5 @@
----
 Language:        Cpp
-# BasedOnStyle:  Google
+#BasedOnStyle:  Google
 AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
@@ -144,5 +143,3 @@ SpacesInSquareBrackets: false
 Standard:        Auto
 TabWidth:        8
 UseTab:          Never
-...
-

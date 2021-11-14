@@ -3,7 +3,7 @@ Checks:          'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modern
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 AnalyzeTemporaryDtors: false
-FormatStyle:     file
+FormatStyle:     'google'
 User:            basilemarchand
 CheckOptions:    
   - key:             google-readability-braces-around-statements.ShortStatementLines
