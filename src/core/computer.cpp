@@ -4,6 +4,11 @@
 
 namespace matmul{
 
+//! \brief Compute matrix product  
+//! \param matrix_size : the matrix size
+//! \param a : the left matrix 
+//! \param b : the right matrix  
+//! \return a std::vector<double> of size matrix_size^2 containing the result of a*b 
 std::vector<double> matmul(int matrix_size, const std::vector<double>& a, const std::vector<double>& b){
     auto ret = generateEmptyMatrix(matrix_size);
     for( int i = 0; i<matrix_size; i++){
