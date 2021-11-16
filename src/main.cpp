@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
   int matrix_size = std::stoi(argv[1]);
 
-  fmt::print("Compute A*B for matrix {}x{}\n", matrix_size, matrix_size);
+  fmt::print("Compute A*B for matrix {0}x{0}\n", matrix_size);
 
   auto matrix_a = matmul::generateRandomMatrix(matrix_size);
   auto matrix_b = matmul::generateRandomMatrix(matrix_size);
